@@ -12,7 +12,12 @@ namespace Notes
         public AppShell()
         {
             InitializeComponent();
-
         }
+        
+        protected void OpenSettingsPage()
+        {
+            Navigation.PushModalAsync(new SettingsPage());
+        }
+
     }
 }

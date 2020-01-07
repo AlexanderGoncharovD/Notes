@@ -24,14 +24,19 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Penguin notes" TextColor="#E8E8E8" FontSize="30" Grid.Column="0"
-                       FontAttributes="Bold"
+                <Label Text="Penguin notes" TextColor="#E8E8E8" FontSize="25" Grid.Column="0"
                        HorizontalTextAlignment="Start"
                        VerticalTextAlignment="End"
                        Margin="30, 0, 0, 15"/>
                 <Image Source="settings.png" Grid.Column="1" WidthRequest="25"
                     HorizontalOptions="End"
-                    VerticalOptions="Start" Margin="0, 15, 15, 0"/>
+                    VerticalOptions="Start" Margin="0, 15, 15, 0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="ButtonSettings_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
         </ContentView>
     </Shell.FlyoutHeader>

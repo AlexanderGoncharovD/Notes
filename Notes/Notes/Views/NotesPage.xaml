@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             Title="MY NOTES"
-             x:Class="Notes.Views.NotesPage">
-    
+             x:Class="Notes.Views.NotesPage"
+             Title="My notes">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="add.png"
+        
+        <ToolbarItem IconImageSource="add"
                      Clicked="AddNewNote_Clicked" />
     </ContentPage.ToolbarItems>
+
     
     <ContentPage.Content>
         <StackLayout>
