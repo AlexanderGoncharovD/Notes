@@ -5,8 +5,11 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        xmlns:local="clr-namespace:Notes.Views"
-       Title="Notes"
-       x:Class="Notes.AppShell">
+       Title="Penguin notes"
+       x:Class="Notes.AppShell"
+       BackgroundColor="#52026E"
+       FlyoutBackgroundColor="White"
+       TabBarIsVisible="False">
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -14,10 +17,49 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+    <Shell.FlyoutHeader>
+        <ContentView HeightRequest="120">
+            <Grid BackgroundColor="#52026E">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Penguin notes" TextColor="#E8E8E8" FontSize="25" Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="End"
+                       Margin="30, 0, 0, 15"/>
+                <Image Source="settings.png" Grid.Column="1" WidthRequest="25"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start" Margin="0, 15, 15, 0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="ButtonSettings_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutHeader>
+
+    <Shell.TitleView>
+        <Label Text="Penguin notes" TextColor="White"
+               WidthRequest="100" HeightRequest="30" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+    </Shell.TitleView>
+
+    
+    <FlyoutItem Title="My notes">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:NotesPage}" />
         </Tab>
-    </TabBar>
+        
+    </FlyoutItem>
+    <FlyoutItem Title="Create new Note">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:AddNote}"/>
+        </Tab>
+    </FlyoutItem>
+    
 
 </Shell>

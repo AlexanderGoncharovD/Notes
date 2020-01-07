@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Notes.Views;
 
 namespace Notes
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell : Shell
     {
+
         public AppShell()
         {
             InitializeComponent();
         }
+        
+        protected void OpenSettingsPage()
+        {
+            Navigation.PushModalAsync(new SettingsPage());
+        }
+
     }
 }
